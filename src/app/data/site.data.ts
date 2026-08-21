@@ -91,8 +91,8 @@ export const site = {
   email: 'velimirovitsh@gmail.com',
   github: 'https://github.com/velimirovic',
   githubLabel: 'github.com/velimirovic',
-  linkedin: 'https://www.linkedin.com/in/marko-velimirovi%C4%87-17b9b218b/',
-  linkedinLabel: 'linkedin.com/in/marko-velimirovic',
+  linkedin: 'https://www.linkedin.com/in/velimirovic/',
+  linkedinLabel: 'linkedin.com/in/velimirovic',
 
   cv: 'assets/Marko_Velimirovic_CV.pdf',
   avatar: 'assets/img/marko.webp',
