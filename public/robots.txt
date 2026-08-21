@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://velimirovic.github.io/sitemap.xml

@@ -1,0 +1,63 @@
+@if (project(); as p) {
+  <app-header-strip>
+    <a left class="nav-link" routerLink="/" fragment="index">← Index</a>
+    <span right>{{ p.number }} / 12</span>
+  </app-header-strip>
+
+  <section class="head pad" id="main">
+    <div>
+      <h1 class="title">
+        @for (line of p.titleLines; track $index; let last = $last) {
+          <span class="title__line" [class.cobalt]="last && p.titleLines.length > 1">{{ line }}</span>
+        }
+      </h1>
+      <p class="lead">{{ p.lead }}</p>
+      @for (paragraph of p.description; track $index) {
+        <p class="body">{{ paragraph }}</p>
+      }
+    </div>
+    <app-spec-sheet class="head__side" [rows]="p.specs" />
+  </section>
+
+  @if (plateCount()) {
+    <div class="plates pad">
+      <app-plate-grid
+        [project]="p.id"
+        [count]="plateCount()"
+        [captions]="p.captions"
+        [label]="p.titleLines.join(' ')"
+      />
+    </div>
+  }
+
+  <div class="rule foot-rule"></div>
+  <nav class="foot pad" aria-label="Other projects">
+    @if (prev(); as prevProject) {
+      <a class="nav-link" [routerLink]="['/projects', prevProject.id]">
+        ← {{ prevProject.number }} {{ prevProject.titleLines.join(' ') }}
+      </a>
+    } @else {
+      <span></span>
+    }
+    @if (next(); as nextProject) {
+      <a class="nav-link foot__next" [routerLink]="['/projects', nextProject.id]">
+        {{ nextProject.number }} {{ nextProject.titleLines.join(' ') }} →
+      </a>
+    }
+  </nav>
+} @else {
+  <app-header-strip>
+    <a left class="nav-link" routerLink="/">← Index</a>
+    <span right>404</span>
+  </app-header-strip>
+
+  <section class="head pad" id="main">
+    <div>
+      <h1 class="title">
+        <span class="title__line">Not</span>
+        <span class="title__line cobalt">found</span>
+      </h1>
+      <p class="lead">That link does not match anything here.</p>
+    </div>
+  </section>
+}

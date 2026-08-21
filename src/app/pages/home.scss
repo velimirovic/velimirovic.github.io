@@ -1,0 +1,377 @@
+// The home page. Sizes come from the design reference; the direction is scale contrast, so
+// the type numbers are the design rather than an implementation detail. Vertical spacing is
+// tokenised in _tokens.scss and runs tighter than the reference, which was drawn one screen
+// at a time and added up to a very long page.
+
+.cobalt {
+  color: var(--cobalt);
+}
+
+// ── Hero ────────────────────────────────────────────────────────
+.hero {
+  padding-top: var(--block-top);
+  display: grid;
+  grid-template-columns: 1.7fr 0.9fr;
+  gap: 52px;
+  align-items: end;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  // Capped: 6.6vw keeps growing past any useful size on a wide monitor.
+  font-size: clamp(38px, 6.6vw, 104px);
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+
+.hero__line {
+  display: block;
+}
+
+.hero__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 34ch;
+}
+
+.hero__facts {
+  font-family: var(--font-display);
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+}
+
+// A cobalt keyline separates the slash from the word without a space wide enough to break
+// the line early.
+.hero__slash {
+  margin-left: 0.12em;
+}
+
+// The two hero actions, in the same idiom as the form's submit: square blocks, mono caps,
+// one filled and one outlined. Plain underlined links read as an afterthought next to type
+// this size.
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border: 2px solid var(--cobalt);
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.action--solid {
+  background: var(--cobalt);
+  color: var(--ground);
+
+  &:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--ground);
+  }
+}
+
+.action--ghost {
+  background: none;
+  color: var(--cobalt);
+
+  &:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+}
+
+// ── Bands and two-column blocks ─────────────────────────────────
+// The rule above a band carries the gap; the band component itself is flush.
+.band-gap {
+  display: block;
+  margin-top: var(--band-gap);
+}
+
+.block {
+  padding-top: var(--block-top);
+  padding-bottom: var(--block-bottom);
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 52px;
+  align-items: start;
+}
+
+// The thesis block is followed by its plates, so it does not carry bottom space.
+.block--tight {
+  padding-bottom: 0;
+}
+
+// The form is shorter than the heading and the contact list beside it, so it centres
+// against them rather than hanging from the top.
+.block--contact {
+  align-items: center;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+
+.display__line {
+  display: block;
+}
+
+.display--project {
+  display: block;
+  font-size: clamp(40px, 7.6vw, 84px);
+  line-height: 0.94;
+  letter-spacing: -0.07em;
+}
+
+.display--contact,
+.display--foot {
+  font-size: clamp(34px, 5vw, 76px);
+  line-height: 1.04;
+}
+
+.thesis__link {
+  display: block;
+}
+
+.lead {
+  margin-top: 18px;
+  font-size: clamp(19px, 2.2vw, 27px);
+  line-height: 1.25;
+  max-width: 22ch;
+}
+
+// ── About ───────────────────────────────────────────────────────
+// Three columns rather than a stack: portrait, who, spec sheet. The block is as tall as its
+// tallest column instead of the sum of everything, which is most of the height saved.
+.about {
+  padding-top: var(--block-top);
+  padding-bottom: var(--block-bottom);
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px 40px;
+  align-items: start;
+}
+
+// Explicit placement so the portrait and the spec sheet each span both text rows.
+.about__portrait {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--cobalt);
+}
+
+.about__who {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.about__text {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.about__specs {
+  display: block;
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.about__name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(30px, 3vw, 46px);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+
+.about__name-line {
+  display: block;
+}
+
+.about__meta {
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.about__p {
+  font-size: 16px;
+  line-height: 1.55;
+
+  + .about__p {
+    margin-top: 14px;
+  }
+}
+
+// ── Plates ──────────────────────────────────────────────────────
+// Capped rather than run to the full content width — a full-bleed 16:9 plate on a wide
+// screen swallows everything around it. app-plate-grid centres itself inside this.
+.plates {
+  --plate-max: 860px;
+  padding-top: var(--plates-top);
+  padding-bottom: var(--plates-bottom);
+}
+
+// ── Index ───────────────────────────────────────────────────────
+.index {
+  display: flex;
+  flex-direction: column;
+}
+
+.idx {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 20px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-family: var(--font-display);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.idx__num {
+  color: var(--cobalt);
+}
+
+.idx__title {
+  font-size: clamp(17px, 2.6vw, 27px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  text-transform: none;
+}
+
+// ── Contact ─────────────────────────────────────────────────────
+.direct {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 100%;
+
+  > div {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+    padding: 10px 0;
+    border-top: 1px solid var(--ink);
+    font-family: var(--font-display);
+    font-size: 12px;
+    line-height: 1.6;
+
+    &:last-child {
+      border-bottom: 1px solid var(--ink);
+    }
+  }
+
+  dt {
+    color: var(--cobalt);
+  }
+
+  dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+// ── Footer ──────────────────────────────────────────────────────
+.foot {
+  padding-top: var(--foot-top);
+  padding-bottom: var(--foot-bottom);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.foot__meta {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+// ── Phone ───────────────────────────────────────────────────────
+@media (max-width: 820px) {
+  .hero,
+  .block {
+    display: block;
+  }
+
+  .hero__meta {
+    margin-top: 26px;
+  }
+
+  .block__side {
+    display: block;
+    margin-top: 24px;
+  }
+
+  .hero__title {
+    font-size: 9.5vw;
+  }
+
+  .display--contact,
+  .display--foot {
+    font-size: 10vw;
+    line-height: 1.02;
+  }
+
+  // One column. Side by side does not work here: the surname set in display type has a
+  // min-content width wider than half a phone, which pushes the grid past the gutter.
+  .about {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .about__portrait,
+  .about__who,
+  .about__text,
+  .about__specs {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .about__portrait {
+    max-width: 150px;
+  }
+
+  .about__name {
+    font-size: clamp(26px, 8vw, 34px);
+  }
+
+  .idx {
+    grid-template-columns: 40px 1fr;
+    gap: 0 14px;
+    padding: 12px 0;
+  }
+
+  .idx__tag {
+    grid-column: 2;
+    margin-top: 4px;
+    color: var(--muted);
+  }
+}

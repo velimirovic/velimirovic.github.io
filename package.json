@@ -1,0 +1,39 @@
+{
+  "name": "velimirovic-portfolio",
+  "version": "1.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "npm run static && ng build",
+    "test": "ng test",
+    "fonts": "node tools/fetch-fonts.mjs",
+    "plates": "node tools/build-plates.mjs",
+    "static": "node tools/generate-static.mjs",
+    "cv": "node tools/build-cv.mjs"
+  },
+  "private": true,
+  "packageManager": "npm@11.8.0",
+  "dependencies": {
+    "@angular/common": "^21.2.0",
+    "@angular/compiler": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/platform-browser": "^21.2.0",
+    "@angular/platform-server": "^21.2.0",
+    "@angular/router": "^21.2.0",
+    "@angular/ssr": "^21.2.5",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^21.2.5",
+    "@angular/cli": "^21.2.5",
+    "@angular/compiler-cli": "^21.2.0",
+    "@types/node": "^20.17.19",
+    "jsdom": "^28.0.0",
+    "prettier": "^3.8.1",
+    "sharp": "^0.35.3",
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.8"
+  }
+}

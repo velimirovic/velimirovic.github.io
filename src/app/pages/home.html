@@ -1,0 +1,145 @@
+<app-header-strip>
+  <span left>{{ site.mark }}</span>
+  <span right>{{ site.place }}</span>
+</app-header-strip>
+
+<!-- ── Hero ──────────────────────────────────────────────────── -->
+<section class="hero pad" id="main">
+  <h1 class="hero__title">
+    @for (line of site.heroLines; track $index; let first = $first) {
+      <span class="hero__line">
+        {{ line }}@if (first) {<span class="cobalt hero__slash">/</span>}
+      </span>
+    }
+  </h1>
+
+  <div class="hero__meta">
+    <p class="hero__facts">
+      @for (line of site.heroMeta; track $index) {
+        {{ line }}<br />
+      }
+    </p>
+    <div class="actions">
+      <a class="action action--solid" [href]="site.cv" download>
+        CV.pdf <span aria-hidden="true">↓</span>
+      </a>
+      <a class="action action--ghost" [href]="mailHref" target="_blank" rel="noopener">
+        Email <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ─────────────────────────────────────────────────── -->
+<app-section-band label="About" class="band-gap" />
+
+<section class="about pad">
+  <img
+    class="about__portrait"
+    [src]="site.avatar"
+    srcset="assets/img/marko-500.webp 500w, assets/img/marko.webp 900w"
+    sizes="(max-width: 820px) 45vw, 20vw"
+    [alt]="site.name"
+    width="900"
+    height="1125"
+    loading="lazy"
+  />
+
+  <div class="about__who">
+    <h2 class="about__name">
+      @for (line of site.nameLines; track $index; let last = $last) {
+        <span class="about__name-line" [class.cobalt]="last">{{ line }}</span>
+      }
+    </h2>
+    <p class="about__meta">{{ site.age }} · Novi Sad, Serbia</p>
+  </div>
+
+  <div class="about__text">
+    @for (paragraph of site.aboutText; track $index) {
+      <p class="about__p">{{ paragraph }}</p>
+    }
+  </div>
+
+  <app-spec-sheet class="about__specs" [rows]="site.aboutSpecs" [fit]="true" />
+</section>
+
+<!-- ── Thesis ────────────────────────────────────────────────── -->
+<app-section-band [label]="thesis.number + ' / 12 — Thesis'" class="band-gap" />
+
+<section class="block block--tight pad">
+  <div>
+    <a class="nav-link thesis__link" [routerLink]="['/projects', thesis.id]">
+      <span class="display display--project">{{ thesis.titleLines.join(' ') }}</span>
+    </a>
+    <p class="lead">{{ thesis.lead }}</p>
+  </div>
+  <app-spec-sheet class="block__side" [rows]="thesisSpecs" />
+</section>
+
+@if (thesisPlateCount) {
+  <div class="plates pad">
+    <app-plate-grid
+      [project]="thesis.id"
+      [count]="thesisPlateCount"
+      [captions]="thesis.captions"
+      [label]="thesis.titleLines.join(' ')"
+    />
+  </div>
+}
+
+<!-- ── Index ─────────────────────────────────────────────────── -->
+<app-section-band label="02 / 12 — Everything else" id="index" />
+
+<nav class="index pad" aria-label="Projects">
+  @for (project of projects; track project.id) {
+    <a class="idx nav-link" [routerLink]="['/projects', project.id]">
+      <span class="idx__num">{{ project.number }}</span>
+      <span class="idx__title">{{ project.titleLines.join(' ') }}</span>
+      <span class="idx__tag">{{ project.tag }}</span>
+    </a>
+  }
+</nav>
+
+<!-- ── Contact ───────────────────────────────────────────────── -->
+<app-section-band label="Contact" class="band-gap" id="contact" />
+
+<section class="block block--contact pad">
+  <div>
+    <h2 class="display display--contact">
+      @for (line of site.contactHeading.lines; track $index) {
+        <span class="display__line">{{ line }}</span>
+      }
+      <span class="display__line cobalt">{{ site.contactHeading.accent }}</span>
+    </h2>
+
+    <dl class="direct">
+      <div>
+        <dt>EMAIL</dt>
+        <dd><a [href]="mailHref" target="_blank" rel="noopener">{{ site.email }}</a></dd>
+      </div>
+      <div>
+        <dt>GITHUB</dt>
+        <dd><a [href]="site.github" target="_blank" rel="noopener">{{ site.githubLabel }}</a></dd>
+      </div>
+      <div>
+        <dt>LINKEDIN</dt>
+        <dd><a [href]="site.linkedin" target="_blank" rel="noopener">{{ site.linkedinLabel }}</a></dd>
+      </div>
+      <div><dt>CV</dt><dd><a [href]="site.cv" download>Marko_Velimirovic_CV.pdf</a></dd></div>
+    </dl>
+  </div>
+
+  <app-contact-form class="block__side" />
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────── -->
+<div class="rule"></div>
+<footer class="foot pad">
+  <h2 class="display display--foot">
+    @for (line of site.footer.lines; track $index) {
+      <span class="display__line">{{ line }}</span>
+    }
+    <span class="display__line cobalt">{{ site.footer.accent }}</span>
+  </h2>
+  <p class="foot__meta">{{ site.name }} · {{ year }}</p>
+</footer>

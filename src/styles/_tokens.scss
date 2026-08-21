@@ -1,0 +1,46 @@
+// Design tokens, taken verbatim from design_handoff_machine_set/README.md.
+//
+// There is deliberately no dark theme and no accent scale: the direction is one ground,
+// one ink, one cobalt, and scale contrast doing all the work.
+
+:root {
+  --ground: #efece4; // page
+  --ink: #111110; // text and 2px rules
+  --cobalt: #1b2fd0; // section bands, accent words, spec labels, links
+  --muted: #6f695c; // captions, mobile index tags
+  --hairline: #c9c4b8; // 1px rule under index rows
+
+  --font-display: 'Martian Mono', ui-monospace, 'Cascadia Mono', monospace;
+  --font-body: 'IBM Plex Sans', Helvetica, Arial, sans-serif;
+
+  --gutter: 64px;
+
+  // Vertical rhythm. The reference was drawn one screen at a time, so its generous spacing
+  // added up to a page that took a lot of scrolling; these are roughly two thirds of it.
+  --band-gap: 44px; // space above a section band
+  --block-top: 40px;
+  --block-bottom: 56px;
+  --plates-top: 28px;
+  --plates-bottom: 64px;
+  --foot-top: 64px;
+  --foot-bottom: 72px;
+
+  color-scheme: light;
+}
+
+// Single breakpoint, as specified. Everything that changes, changes here.
+$bp: 820px;
+
+@media (max-width: 820px) {
+  :root {
+    --gutter: 20px;
+
+    --band-gap: 32px;
+    --block-top: 30px;
+    --block-bottom: 40px;
+    --plates-top: 20px;
+    --plates-bottom: 44px;
+    --foot-top: 48px;
+    --foot-bottom: 56px;
+  }
+}

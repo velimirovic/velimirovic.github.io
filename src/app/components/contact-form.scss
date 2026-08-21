@@ -1,0 +1,127 @@
+// Same idiom as the spec sheets: cobalt mono label, hairline between rows, no boxes.
+
+.row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 16px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-top: 1px solid var(--ink);
+}
+
+.row--message {
+  align-items: start;
+}
+
+label {
+  font-family: var(--font-display);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--cobalt);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  resize: vertical;
+
+  &:focus {
+    outline: none;
+  }
+
+  // The caret and a cobalt underline are the only affordance; a bordered box would be the
+  // one rounded rectangle on the whole site.
+  &:focus-visible {
+    box-shadow: inset 0 -2px 0 var(--cobalt);
+  }
+
+  &::placeholder {
+    color: var(--muted);
+  }
+}
+
+textarea {
+  min-height: 5.4em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ink);
+}
+
+button {
+  padding: 12px 26px;
+  border: 0;
+  background: var(--cobalt);
+  color: var(--ground);
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--ink);
+  }
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: progress;
+  }
+}
+
+.note {
+  font-family: var(--font-display);
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.note--error {
+  color: var(--cobalt);
+}
+
+.sent {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.sent__mark {
+  color: var(--cobalt);
+  font-weight: 700;
+}
+
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media (max-width: 820px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}

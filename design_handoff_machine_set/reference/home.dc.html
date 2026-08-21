@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;background:#efece4;}
+  a{color:#1b2fd0;text-decoration:none;border-bottom:2px solid #1b2fd0;}
+  a:hover{color:#111;border-bottom-color:#111;}
+  @media (max-width:820px){
+    [data-r="hero"]{display:block !important;}
+    [data-r="hero-meta"]{margin-top:30px !important;}
+    [data-r="spec"]{display:block !important;}
+    [data-r="spec-rows"]{margin-top:24px !important;}
+    [data-r="row"]{grid-template-columns:1fr !important;gap:2px !important;}
+    [data-r="pad"]{padding-left:20px !important;padding-right:20px !important;}
+    [data-r="thumbs"]{grid-template-columns:1fr !important;}
+    [data-r="big"]{font-size:9.5vw !important;}
+    [data-r="big-foot"]{font-size:10vw !important;line-height:1.02 !important;}
+    [data-r="big-about"]{font-size:8vw !important;line-height:1.04 !important;}
+    [data-r="idx"]{grid-template-columns:40px 1fr !important;gap:0 14px !important;padding:14px 0 !important;}
+    [data-r="idx"] > span:last-child{grid-column:2 !important;margin-top:4px !important;color:#6f695c !important;}
+  }
+</style>
+</helmet>
+
+<div style="background:#efece4;color:#111110;font-family:'IBM Plex Sans',Helvetica,sans-serif;min-height:100vh;overflow-x:hidden;">
+
+  <div data-r="pad" style="padding:22px 64px;display:flex;justify-content:space-between;gap:20px;font-family:'Martian Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.02em;text-transform:uppercase;">
+    <span>M. Velimirović</span>
+    <span>Novi Sad · 45.2671 N</span>
+  </div>
+  <div style="height:2px;background:#111110;"></div>
+
+  <div data-r="pad" style="padding:64px 64px 0 64px;">
+    <div data-r="hero" style="display:grid;grid-template-columns:1.7fr 0.9fr;gap:52px;align-items:end;">
+      <div data-r="big" style="font-family:'Martian Mono',monospace;font-weight:800;font-size:6.6vw;line-height:1.02;letter-spacing:-0.06em;text-transform:uppercase;">Backend<br><span style="color:#1b2fd0;">/</span>&nbsp;full-stack<br>engineer</div>
+      <div data-r="hero-meta" style="display:flex;flex-direction:column;gap:18px;font-size:18px;line-height:1.4;max-width:34ch;">
+        <div style="font-family:'Martian Mono',monospace;font-size:13px;line-height:1.7;letter-spacing:-0.01em;">B.Sc. Electrical &amp; Computer<br>Engineering — FTN, 2026<br>Free from 01.09.2026</div>
+        <div style="display:flex;gap:22px;font-size:16px;"><a href="#cv">CV.pdf</a><a href="#mail">mail</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:2px;background:#111110;margin-top:66px;"></div>
+  <div style="background:#1b2fd0;color:#efece4;">
+    <div data-r="pad" style="padding:14px 64px;font-family:'Martian Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;">About</div>
+  </div>
+  <div style="height:2px;background:#111110;"></div>
+
+  <div data-r="pad" style="padding:56px 64px 90px 64px;">
+    <div data-r="spec" style="display:grid;grid-template-columns:1.15fr 1fr;gap:52px;align-items:start;">
+      <div data-r="big-about" style="font-family:'Martian Mono',monospace;font-weight:800;font-size:3.4vw;line-height:1.06;letter-spacing:-0.06em;text-transform:uppercase;">Twelve<br>projects,<br><span style="color:#1b2fd0;">one thesis</span></div>
+      <div data-r="spec-rows" style="display:flex;flex-direction:column;">
+        <div data-r="row" style="display:grid;grid-template-columns:100px 1fr;gap:16px;padding:12px 0;border-top:1px solid #111110;font-family:'Martian Mono',monospace;font-size:12px;line-height:1.6;">
+          <span style="color:#1b2fd0;">WRITES</span><span>C# · Node.js · Python · C++ · SQL</span>
+        </div>
+        <div data-r="row" style="display:grid;grid-template-columns:100px 1fr;gap:16px;padding:12px 0;border-top:1px solid #111110;font-family:'Martian Mono',monospace;font-size:12px;line-height:1.6;">
+          <span style="color:#1b2fd0;">RUNS ON</span><span>Docker · PostgreSQL · Redis · RabbitMQ</span>
+        </div>
+        <div data-r="row" style="display:grid;grid-template-columns:100px 1fr;gap:16px;padding:12px 0;border-top:1px solid #111110;border-bottom:1px solid #111110;font-family:'Martian Mono',monospace;font-size:12px;line-height:1.6;">
+          <span style="color:#1b2fd0;">SEEKING</span><span>First engineering role — from 01.09.2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:2px;background:#111110;margin-top:66px;"></div>
+  <div style="background:#1b2fd0;color:#efece4;">
+    <div data-r="pad" style="padding:14px 64px;font-family:'Martian Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;">01 / 12 — Thesis</div>
+  </div>
+  <div style="height:2px;background:#111110;"></div>
+
+  <div data-r="pad" style="padding:52px 64px 0 64px;">
+    <div data-r="spec" style="display:grid;grid-template-columns:1.15fr 1fr;gap:52px;align-items:start;">
+      <div>
+        <div style="font-family:'Martian Mono',monospace;font-weight:800;font-size:clamp(44px,7.6vw,96px);line-height:0.94;letter-spacing:-0.07em;text-transform:uppercase;">Shelvio</div>
+        <div style="margin-top:22px;font-size:clamp(20px,2.2vw,30px);line-height:1.25;max-width:22ch;">Films, series, books — and a recommender that argues its case.</div>
+      </div>
+      <div data-r="spec-rows" style="display:flex;flex-direction:column;">
+        <div data-r="row" style="display:grid;grid-template-columns:100px 1fr;gap:16px;padding:12px 0;border-top:1px solid #111110;font-family:'Martian Mono',monospace;font-size:12px;line-height:1.6;">
+          <span style="color:#1b2fd0;">SERVICES</span><span>5 behind one API gateway</span>
+        </div>
+        <div data-r="row" style="display:grid;grid-template-columns:100px 1fr;gap:16px;padding:12px 0;border-top:1px solid #111110;font-family:'Martian Mono',monospace;font-size:12px;line-height:1.6;">
+          <span style="color:#1b2fd0;">STACK</span><span>C# · Node.js · Python · PostgreSQL ×2 · Redis · RabbitMQ · GPT-4o mini</span>
+        </div>
+        <div data-r="row" style="display:grid;grid-template-columns:100px 1fr;gap:16px;padding:12px 0;border-top:1px solid #111110;border-bottom:1px solid #111110;font-family:'Martian Mono',monospace;font-size:12px;line-height:1.6;">
+          <span style="color:#1b2fd0;">RUN</span><span>docker compose up</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-r="pad" style="padding:40px 64px 0 64px;">
+    <div style="width:100%;aspect-ratio:16/9;background:repeating-linear-gradient(0deg,#dbd7cc 0 9px,#d3cec2 9px 18px);display:flex;align-items:flex-end;padding:16px;box-sizing:border-box;">
+      <span style="font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6f695c;text-transform:uppercase;">screenshot 01 — 16:9</span>
+    </div>
+  </div>
+
+  <div data-r="pad" style="padding:16px 64px 100px 64px;">
+    <div data-r="thumbs" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div style="aspect-ratio:16/9;background:repeating-linear-gradient(0deg,#dbd7cc 0 9px,#d3cec2 9px 18px);"></div>
+      <div style="aspect-ratio:16/9;background:repeating-linear-gradient(0deg,#dbd7cc 0 9px,#d3cec2 9px 18px);"></div>
+      <div style="aspect-ratio:16/9;background:repeating-linear-gradient(0deg,#dbd7cc 0 9px,#d3cec2 9px 18px);"></div>
+    </div>
+  </div>
+
+  <div style="height:2px;background:#111110;"></div>
+  <div style="background:#1b2fd0;color:#efece4;">
+    <div data-r="pad" style="padding:14px 64px;font-family:'Martian Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;">02 / 12 — Everything else</div>
+  </div>
+  <div style="height:2px;background:#111110;"></div>
+
+  <div data-r="pad" style="padding:0 64px;">
+    <div style="display:flex;flex-direction:column;">
+      <a href="#p02" data-r="idx" style="display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid #c9c4b8;border-left:0;border-right:0;border-top:0;font-family:'Martian Mono',monospace;font-size:12px;text-transform:uppercase;color:#111110;">
+        <span style="color:#1b2fd0;">02</span><span style="font-size:clamp(17px,2.6vw,34px);font-weight:700;letter-spacing:-0.05em;text-transform:none;">Microservice platform</span><span>7 services</span>
+      </a>
+      <a href="#p03" data-r="idx" style="display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid #c9c4b8;border-left:0;border-right:0;border-top:0;font-family:'Martian Mono',monospace;font-size:12px;text-transform:uppercase;color:#111110;">
+        <span style="color:#1b2fd0;">03</span><span style="font-size:clamp(17px,2.6vw,34px);font-weight:700;letter-spacing:-0.05em;text-transform:none;">Tour platform</span><span>live GPS</span>
+      </a>
+      <a href="#p04" data-r="idx" style="display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid #c9c4b8;border-left:0;border-right:0;border-top:0;font-family:'Martian Mono',monospace;font-size:12px;text-transform:uppercase;color:#111110;">
+        <span style="color:#1b2fd0;">04</span><span style="font-size:clamp(17px,2.6vw,34px);font-weight:700;letter-spacing:-0.05em;text-transform:none;">Conference PWA</span><span>AI assistant</span>
+      </a>
+      <a href="#p05" data-r="idx" style="display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid #c9c4b8;border-left:0;border-right:0;border-top:0;font-family:'Martian Mono',monospace;font-size:12px;text-transform:uppercase;color:#111110;">
+        <span style="color:#1b2fd0;">05</span><span style="font-size:clamp(17px,2.6vw,34px);font-weight:700;letter-spacing:-0.05em;text-transform:none;">Geo-tagged video</span><span>web</span>
+      </a>
+      <a href="#p06" data-r="idx" style="display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid #c9c4b8;border-left:0;border-right:0;border-top:0;font-family:'Martian Mono',monospace;font-size:12px;text-transform:uppercase;color:#111110;">
+        <span style="color:#1b2fd0;">06</span><span style="font-size:clamp(17px,2.6vw,34px);font-weight:700;letter-spacing:-0.05em;text-transform:none;">Marketplace</span><span>live auctions</span>
+      </a>
+      <a href="#p07" data-r="idx" style="display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid #c9c4b8;border-left:0;border-right:0;border-top:0;font-family:'Martian Mono',monospace;font-size:12px;text-transform:uppercase;color:#111110;">
+        <span style="color:#1b2fd0;">07</span><span style="font-size:clamp(17px,2.6vw,34px);font-weight:700;letter-spacing:-0.05em;text-transform:none;">Desktop app</span><span>WPF</span>
+      </a>
+      <a href="#p08" data-r="idx" style="display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid #c9c4b8;border-left:0;border-right:0;border-top:0;font-family:'Martian Mono',monospace;font-size:12px;text-transform:uppercase;color:#111110;">
+        <span style="color:#1b2fd0;">08</span><span style="font-size:clamp(17px,2.6vw,34px);font-weight:700;letter-spacing:-0.05em;text-transform:none;">Party card game</span><span>web</span>
+      </a>
+      <a href="#p09" data-r="idx" style="display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid #c9c4b8;border-left:0;border-right:0;border-top:0;font-family:'Martian Mono',monospace;font-size:12px;text-transform:uppercase;color:#111110;">
+        <span style="color:#1b2fd0;">09</span><span style="font-size:clamp(17px,2.6vw,34px);font-weight:700;letter-spacing:-0.05em;text-transform:none;">Game one</span><span>Unity</span>
+      </a>
+      <a href="#p10" data-r="idx" style="display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid #c9c4b8;border-left:0;border-right:0;border-top:0;font-family:'Martian Mono',monospace;font-size:12px;text-transform:uppercase;color:#111110;">
+        <span style="color:#1b2fd0;">10</span><span style="font-size:clamp(17px,2.6vw,34px);font-weight:700;letter-spacing:-0.05em;text-transform:none;">Game two</span><span>Unity</span>
+      </a>
+      <a href="#p11" data-r="idx" style="display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid #c9c4b8;border-left:0;border-right:0;border-top:0;font-family:'Martian Mono',monospace;font-size:12px;text-transform:uppercase;color:#111110;">
+        <span style="color:#1b2fd0;">11</span><span style="font-size:clamp(17px,2.6vw,34px);font-weight:700;letter-spacing:-0.05em;text-transform:none;">Simulator one</span><span>OpenGL / C++</span>
+      </a>
+      <a href="#p12" data-r="idx" style="display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid #c9c4b8;border-left:0;border-right:0;border-top:0;font-family:'Martian Mono',monospace;font-size:12px;text-transform:uppercase;color:#111110;">
+        <span style="color:#1b2fd0;">12</span><span style="font-size:clamp(17px,2.6vw,34px);font-weight:700;letter-spacing:-0.05em;text-transform:none;">Simulator two</span><span>OpenGL / C++</span>
+      </a>
+    </div>
+  </div>
+
+  <div data-r="pad" style="padding:96px 64px 120px 64px;">
+    <div data-r="hero" style="display:grid;grid-template-columns:1.7fr 0.9fr;gap:52px;align-items:end;">
+      <div data-r="big-foot" style="font-family:'Martian Mono',monospace;font-weight:800;font-size:5vw;line-height:1.04;letter-spacing:-0.06em;text-transform:uppercase;">Novi Sad<br><span style="color:#1b2fd0;">Serbia</span></div>
+      <div data-r="hero-meta" style="display:flex;flex-direction:column;gap:16px;font-family:'Martian Mono',monospace;font-size:13px;line-height:1.7;">
+        <div>marko@example.com<br>github.com/marko</div>
+        <div style="display:flex;gap:22px;font-size:15px;font-family:'IBM Plex Sans',sans-serif;"><a href="#cv">CV.pdf</a><a href="#mail">mail</a></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
