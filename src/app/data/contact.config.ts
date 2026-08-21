@@ -15,7 +15,7 @@
  * typed.
  */
 export const contactConfig = {
-  web3formsKey: '',
+  web3formsKey: 'c4b5759c-f553-40b8-b0f4-34b25fddd55e',
   subject: 'Portfolio — new message',
 };
 

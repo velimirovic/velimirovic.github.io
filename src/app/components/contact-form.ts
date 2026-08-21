@@ -120,7 +120,14 @@ export class ContactForm {
           message,
         }),
       });
-      if (!response.ok) throw new Error(`Web3Forms responded ${response.status}`);
+      // A rejected submission comes back as 4xx, but Web3Forms can also answer 200 with
+      // `success: false` — a quota that ran out, or a message its spam filter dropped.
+      // Trusting the status alone would tell a visitor their message went through when it
+      // did not, so the body decides.
+      const result = (await response.json().catch(() => null)) as { success?: boolean } | null;
+      if (!response.ok || result?.success === false) {
+        throw new Error(`Web3Forms responded ${response.status}`);
+      }
 
       this.status.set('sent');
       this.form.reset();
