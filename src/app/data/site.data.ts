@@ -94,7 +94,7 @@ export const site = {
   linkedin: 'https://www.linkedin.com/in/velimirovic/',
   linkedinLabel: 'linkedin.com/in/velimirovic',
 
-  cv: 'assets/Marko_Velimirovic_CV.pdf',
+  cv: 'assets/Marko_Velimirovic_CV_2026.pdf',
   avatar: 'assets/img/marko.webp',
 
   site: 'https://velimirovic.github.io',
