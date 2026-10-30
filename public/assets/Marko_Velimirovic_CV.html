@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Marko Velimirović — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      color-scheme: light;
+      --accent: #1d4ed8;
+      --text:   #111827;
+      --text2:  #374151;
+      --muted:  #6b7280;
+      --border: #e5e7eb;
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #d1d5db;
+      color: var(--text);
+      font-size: 9.5pt;
+      line-height: 1.55;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ─── PAGE ──────────────────────────────────── */
+    .page {
+      max-width: 210mm;
+      min-height: 297mm;
+      margin: 16px auto;
+      background: #fff;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+      padding: 32px 38px 32px;
+    }
+
+    /* ─── HEADER ────────────────────────────────── */
+    .header {
+      margin-bottom: 16px;
+      border-bottom: 1.5px solid var(--accent);
+      padding-bottom: 12px;
+    }
+
+    .header__name {
+      font-size: 22pt;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .header__name span {
+      font-size: 14pt;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .header__title {
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .header__contact {
+      font-size: 8.5pt;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+
+    .header__contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ─── SECTION ───────────────────────────────── */
+    .section {
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid var(--accent);
+      margin-bottom: 9px;
+    }
+
+    /* ─── SKILLS ────────────────────────────────── */
+    .skill-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 3px;
+      font-size: 9pt;
+    }
+
+    .skill-row__label {
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .skill-row__values {
+      color: var(--text2);
+    }
+
+    /* ─── EXPERIENCE ────────────────────────────── */
+    .exp-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .exp-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .exp-item__role {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .exp-item__company {
+      font-size: 8.5pt;
+      color: var(--text2);
+      font-style: italic;
+    }
+
+    .exp-item__year {
+      font-size: 8pt;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .exp-item__stack {
+      font-size: 8pt;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ─── PROJECTS ──────────────────────────────── */
+    .project {
+      margin-bottom: 11px;
+      padding-bottom: 11px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .project__header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 1px;
+    }
+
+    .project__title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .project__meta {
+      font-size: 8pt;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .project__stack {
+      font-size: 8pt;
+      color: var(--muted);
+      margin-bottom: 5px;
+      line-height: 1.4;
+    }
+
+    .project__stack a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .project__stack a:hover { text-decoration: underline; }
+
+    .project__bullets {
+      padding-left: 14px;
+      list-style: disc;
+    }
+
+    .project__bullets li {
+      font-size: 8.5pt;
+      color: var(--text2);
+      margin-bottom: 2px;
+      line-height: 1.5;
+    }
+
+    .project__note {
+      font-size: 8.5pt;
+      color: var(--text2);
+      line-height: 1.5;
+    }
+
+    .project__note a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ─── EDUCATION ─────────────────────────────── */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .edu-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .edu-item__left { flex: 1; }
+
+    .edu-item__school {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .edu-item__degree {
+      font-size: 8.5pt;
+      color: var(--text2);
+      margin-top: 1px;
+    }
+
+    .edu-item__year {
+      font-size: 8pt;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ─── FOOTER ROW ────────────────────────────── */
+    .footer-row {
+      font-size: 8.5pt;
+      color: var(--text2);
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────── */
+    @media (max-width: 640px) {
+      body { background: #fff; }
+      .page { padding: 20px 18px; margin: 0; box-shadow: none; min-height: unset; }
+      .header__top { flex-direction: column; gap: 6px; }
+      .header__links { flex-wrap: wrap; gap: 8px; }
+    }
+
+    /* ─── PRINT ─────────────────────────────────── */
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; width: 210mm; max-width: 100%; padding: 28px 34px; }
+    }
+
+    @page { size: A4; margin: 0; }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header__name">Marko Velimirović <span>(22)</span></div>
+      <div class="header__title">Backend / Full-Stack Engineer</div>
+      <div class="header__contact">
+        Novi Sad, Serbia &nbsp;·&nbsp; +381 63 810 72 45 &nbsp;·&nbsp;
+        <a href="mailto:velimirovitsh@gmail.com">velimirovitsh@gmail.com</a>
+        &nbsp;·&nbsp;
+        <a href="https://velimirovic.github.io/portfolio/" target="_blank">velimirovic.github.io</a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/velimirovic" target="_blank">github.com/velimirovic</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/marko-velimirović-17b9b218b/" target="_blank">linkedin.com/in/velimirovic</a>
+      </div>
+    </header>
+
+    <!-- SUMMARY -->
+    <div class="section">
+      <div class="section-title">Summary</div>
+      <p class="project__note">
+        Backend-leaning full-stack engineer with a B.Sc. in Electrical &amp; Computer Engineering from the Faculty of Technical Sciences, Novi Sad, currently pursuing an M.Sc. in Computer Science &amp; Automation. Builds distributed systems in C#, Java, Go, Node.js and Python — the thesis project runs as five containerised microservices in three languages behind one API gateway. Seeking a first engineering role.
+      </p>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+      <div class="section-title">Technical Skills</div>
+      <div class="skill-row"><span class="skill-row__label">Languages:</span><span class="skill-row__values">C#, Java, Go, Python, TypeScript, C++, SQL</span></div>
+      <div class="skill-row"><span class="skill-row__label">Backend:</span><span class="skill-row__values">ASP.NET Core 9, Spring Boot, Node.js / Express, FastAPI, EF Core, REST, gRPC, SignalR, JWT</span></div>
+      <div class="skill-row"><span class="skill-row__label">Frontend:</span><span class="skill-row__values">Angular 16–21, React 18/19, RxJS, SCSS, PWA</span></div>
+      <div class="skill-row"><span class="skill-row__label">Databases:</span><span class="skill-row__values">PostgreSQL, MySQL, MongoDB, Neo4j, Redis</span></div>
+      <div class="skill-row"><span class="skill-row__label">Infrastructure:</span><span class="skill-row__values">Docker, Docker Compose, RabbitMQ, YARP gateway, GitHub Actions, Git</span></div>
+      <div class="skill-row"><span class="skill-row__label">AI integration:</span><span class="skill-row__values">OpenAI API (GPT-4o mini), Claude API, prompt design, output validation, caching and rate limiting</span></div>
+      <div class="skill-row"><span class="skill-row__label">AI tools:</span><span class="skill-row__values">Claude Code (daily), GitHub Copilot in VS Code, Cursor, Perplexity</span></div>
+      <div class="skill-row"><span class="skill-row__label">Practices:</span><span class="skill-row__values">Microservices, modular monolith, Clean Architecture, MVC/MVVM, xUnit, Jest, pytest, Prometheus, Grafana</span></div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+      <div class="section-title">Experience</div>
+      <div class="exp-item">
+        <div>
+          <div class="exp-item__role">Web Intern</div>
+          <div class="exp-item__company">Synechron · October 2026 – December 2026</div>
+          <div class="exp-item__stack">React · TypeScript · Java Spring Boot · MySQL · MongoDB · Rancher Desktop · Kafka · Microservices</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section">
+      <div class="section-title">Projects</div>
+
+      <div class="project">
+        <div class="project__header">
+          <span class="project__title">Shelvio — Microservice platform with AI recommendations</span>
+          <span class="project__meta">B.Sc. thesis · 2026</span>
+        </div>
+        <div class="project__stack">
+          ASP.NET Core 9 · Node.js · Python / FastAPI · Angular 21 · PostgreSQL · Redis · RabbitMQ · Docker Compose · GPT-4o mini ·
+          <a href="https://github.com/velimirovic/shelvio" target="_blank">github.com/velimirovic/shelvio</a>
+        </div>
+        <ul class="project__bullets">
+          <li>5 independently deployable services in 3 languages behind one ASP.NET Core / YARP gateway handling routing and JWT validation; each service owns its store across 2 PostgreSQL databases, Redis and RabbitMQ. Tests in 3 toolchains; entire stack starts with <code>docker compose up</code>.</li>
+          <li>Recommendation pipeline: library tiered by rating, prompted to GPT-4o mini, output filtered against owned titles; spend capped with a 12-hour Redis cache and a per-user daily limit.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project__header">
+          <span class="project__title">TourFlo — Seven-service microservice platform</span>
+          <span class="project__meta">team project · 2025</span>
+        </div>
+        <div class="project__stack">
+          Go · C# · Java / Spring Boot · Node.js · Angular 18 · gRPC · PostgreSQL · MongoDB · Neo4j · Docker Compose ·
+          <a href="https://github.com/velimirovic/soa-tourism-app" target="_blank">github.com/velimirovic/soa-tourism-app</a>
+        </div>
+        <ul class="project__bullets">
+          <li>Built 7 independently deployable services across 5 runtimes, communicating over REST and gRPC through a Go API gateway that validates JWTs and routes traffic.</li>
+          <li>Matched each store to its data — Neo4j for the social graph, MongoDB for the blog, PostgreSQL for tours and accounts — all containerised with Docker Compose.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project__header">
+          <span class="project__title">Travel Vista — Tour platform with real-time tracking</span>
+          <span class="project__meta">team project · 2025</span>
+        </div>
+        <div class="project__stack">
+          ASP.NET Core 8 · Angular 16 · PostgreSQL · SignalR · Leaflet · OpenAI API ·
+          <a href="https://github.com/kzi-nastava/psw-be-ra-2025-group-3" target="_blank">github.com/kzi-nastava/psw-be-ra-2025-group-3</a>
+        </div>
+        <ul class="project__bullets">
+          <li>Implemented live GPS tracking over SignalR, streaming participant positions onto Leaflet maps during a tour. Built as a modular monolith on Clean Architecture with enforced module boundaries, working across the backend and the frontend in a team.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project__note">
+          Nine further projects — a geo-tagged video platform with an ETL pipeline and Grafana dashboards, a conference PWA with a Claude API assistant, a marketplace with live auctions, a WPF desktop app, two Unity games and two OpenGL renderers in C++ — at <a href="https://velimirovic.github.io/portfolio/" target="_blank">velimirovic.github.io</a>.
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <div class="section-title">Education</div>
+
+      <div class="edu-item">
+        <div class="edu-item__left">
+          <div class="edu-item__school">Faculty of Technical Sciences, University of Novi Sad</div>
+          <div class="edu-item__degree">M.Sc. Computer Science &amp; Automation (E2) · 1st year</div>
+        </div>
+        <div class="edu-item__year">2026 – Present</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-item__left">
+          <div class="edu-item__school">Faculty of Technical Sciences, University of Novi Sad</div>
+          <div class="edu-item__degree">B.Sc. Electrical &amp; Computer Engineering · Computing and Automation · Thesis: Shelvio (mentor dr Miroslav Zarić)</div>
+        </div>
+        <div class="edu-item__year">10/2022 – 09/2026</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-item__left">
+          <div class="edu-item__school">Electrical Engineering School "Mihajlo Pupin", Novi Sad</div>
+          <div class="edu-item__degree">IT Technician</div>
+        </div>
+        <div class="edu-item__year">09/2018 – 06/2022</div>
+      </div>
+    </div>
+
+    <!-- LANGUAGES & ADDITIONAL -->
+    <div class="section">
+      <div class="section-title">Languages &amp; Additional</div>
+      <p class="footer-row">Serbian — native &nbsp;·&nbsp; English — professional working proficiency &nbsp;·&nbsp; Member of Mensa</p>
+    </div>
+
+  </div>
+</body>
+</html>
